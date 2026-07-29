@@ -1,0 +1,91 @@
+/* ============================================================
+   Vidyamrit — purpose.css
+   "Our Purpose": mission statement, shloka signature,
+   and three commitment pillars.
+   ============================================================ */
+
+.purpose { position: relative; }
+
+.purpose__statement {
+  font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem);
+  line-height: 1.28;
+  max-width: 20ch;
+  margin-inline: auto;
+}
+.purpose__statement .hl { color: var(--gold-600); }
+
+.purpose__shloka {
+  max-width: 640px;
+  margin: 1.6rem auto 0;
+}
+
+/* ---- Commitment pillars --------------------------------- */
+.purpose__pillars { margin-top: clamp(2.5rem, 2rem + 2.5vw, 4rem); }
+
+.purpose-card {
+  position: relative;
+  padding: 2rem 1.6rem 1.8rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: transform var(--t-med) var(--ease),
+              box-shadow var(--t-med) var(--ease),
+              border-color var(--t-med) var(--ease);
+}
+.purpose-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+.purpose-card__ico {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(150deg, var(--royal-050), #fff);
+  color: var(--royal-700);
+  border: 1px solid var(--line);
+  margin-bottom: 1.1rem;
+}
+.purpose-card__ico svg { width: 28px; height: 28px; }
+.purpose-card h3 { margin-bottom: 0.5rem; }
+.purpose-card p { font-size: 0.96rem; }
+
+/* the top accent hairline that fills gold on hover */
+.purpose-card::before {
+  content: "";
+  position: absolute; top: 0; left: 1.6rem; right: 1.6rem;
+  height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-med) var(--ease);
+}
+.purpose-card:hover::before { transform: scaleX(1); }
+
+
+.purpose-link{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+.purpose-link:hover{
+    color: #c89b3c;
+}
+
+.purpose-image{
+    margin: 35px auto 20px;
+    max-width: 700px;
+}
+
+.purpose-image img{
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    transition: transform 0.35s ease;
+}
+
+.purpose-image img:hover{
+    transform: scale(1.03);
+}

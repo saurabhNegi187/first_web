@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institute Moments — Photo Gallery | Vidyamrit Coaching Institute</title>
+  <meta name="description" content="Photo gallery of Vidyamrit Coaching Institute — events, classroom sessions, student achievements and celebrations at our Jaipur centre." />
+  <link rel="icon" type="image/svg+xml" href="../images/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/cards.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/forms.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="../index.html" aria-label="Vidyamrit — home">
+          <img class="brand__mark" src="../images/logo.svg" alt="" width="42" height="42" />
+          <span class="brand__text"><span class="brand__name">Vidyamrit</span><span class="brand__sub">विद्या अमृतम्</span></span>
+        </a>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="guest-lectures.html">Guest Lectures</a></li>
+            <li><a class="nav-link" href="institute-moments.html">Institute Moments</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+          <a class="btn btn--gold nav-cta" href="registration.html">Register</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <main id="main">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a><span class="sep">/</span>
+          <span aria-current="page">Institute Moments</span>
+        </nav>
+        <h1>Institute Moments</h1>
+        <p class="page-hero__lead">A look at life at Vidyamrit — classrooms, celebrations, exhibitions and the proud moments when our students&rsquo; hard work pays off.</p>
+        <div class="page-hero__chips">
+          <span class="chip">Events</span>
+          <span class="chip">Classroom</span>
+          <span class="chip">Achievements</span>
+          <span class="chip">Celebrations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head text-center reveal">
+          <span class="eyebrow">Gallery</span>
+          <h2 class="section-title">Glimpses from our campus are coming soon ....</h2>
+       <!--   <p class="section-sub">Filter by category, and tap any moment to view it larger. <span style="color:var(--muted);">(Placeholder tiles — swap in real photographs later.)</span></p> -->
+        </div>
+
+        <!-- Filter buttons (driven by animations.js) -->
+        <div class="filters" role="tablist" aria-label="Filter gallery">
+          <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="events">Events</button>
+          <button class="filter-btn" type="button" data-filter="classroom">Classroom</button>
+          <button class="filter-btn" type="button" data-filter="achievements">Achievements</button>
+          <button class="filter-btn" type="button" data-filter="celebrations">Celebrations</button>
+        </div>
+
+
+        <!-- Gallery grid -->
+        <div class="gallery">
+
+        <!--  <figure class="moment-tile is-tall reveal" data-category="events" data-caption="Annual Day 2024 — students perform a cultural showcase for parents and staff.">
+            <div class="ph ph--a">Annual Day 2024</div>
+            <figcaption>Annual Day 2024</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="classroom" data-caption="A weekend doubt-clearing session in the Foundation batch.">
+            <div class="ph ph--b">Doubt-Clearing Session</div>
+            <figcaption>Doubt-Clearing Session</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="achievements" data-caption="Felicitating our JNVST 2024 selections with their parents and teachers.">
+            <div class="ph ph--c">JNVST Toppers 2024</div>
+            <figcaption>JNVST Toppers 2024</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="celebrations" data-caption="Independence Day flag hoisting and patriotic performances at the centre.">
+            <div class="ph ph--d">Independence Day</div>
+            <figcaption>Independence Day</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="classroom" data-caption="Working through non-verbal reasoning puzzles in a Navodaya class.">
+            <div class="ph ph--b">Mental Ability Class</div>
+            <figcaption>Mental Ability Class</figcaption>
+          </figure>
+          <figure class="moment-tile is-tall reveal" data-category="events" data-caption="Students present working models at our annual science exhibition.">
+            <div class="ph ph--d">Science Exhibition</div>
+            <figcaption>Science Exhibition</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="achievements" data-caption="Celebrating our Class 10 board toppers and their scoring subjects.">
+            <div class="ph ph--c">Board Result Stars</div>
+            <figcaption>Board Result Stars</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="classroom" data-caption="A full-length mock test underway in real exam conditions.">
+            <div class="ph ph--a">Mock Test Day</div>
+            <figcaption>Mock Test Day</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="celebrations" data-caption="Students organise a heartfelt Teachers&rsquo; Day celebration.">
+            <div class="ph ph--d">Teachers' Day</div>
+            <figcaption>Teachers' Day</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="events" data-caption="Termly parent-teacher meeting to review each child&rsquo;s progress.">
+            <div class="ph ph--a">Parent-Teacher Meet</div>
+            <figcaption>Parent-Teacher Meet</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="achievements" data-caption="Our Army &amp; Sainik School selections with their mentors.">
+            <div class="ph ph--c">Sainik School Selects</div>
+            <figcaption>Sainik School Selects</figcaption>
+          </figure>
+          <figure class="moment-tile reveal" data-category="celebrations" data-caption="Students and staff celebrate the spirit of the season together.">
+            <div class="ph ph--b">Festival of Colours</div>
+            <figcaption>Festival of Colours</figcaption>
+          </figure> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-band reveal zoom">
+          <span class="eyebrow" style="justify-content:center;">Be Part of the Story</span>
+          <h2>Your child&rsquo;s success could be our next proud moment</h2>
+          <p>Join a community that celebrates effort and achievement alike. Register today and begin the journey.</p>
+          <div class="cta-band__actions">
+            <a class="btn btn--gold btn--lg" href="registration.html">Register Now</a>
+            <a class="btn btn--light btn--lg" href="contact.html">Visit the Centre</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX (opened by animations.js) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <div class="lightbox__stage">
+        <div class="lightbox__stageInner"></div>
+        <div class="lightbox__cap"></div>
+      </div>
+      <button class="lightbox__close" type="button" aria-label="Close viewer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="lightbox__nav prev" type="button" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg>
+      </button>
+      <button class="lightbox__nav next" type="button" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Vidyamrit — home">
+            <img class="brand__mark" src="../images/logo.jpeg" alt="" width="46" height="46" />
+            <span class="brand__text">
+              <span class="brand__name">Vidyamrit</span>
+              <span class="brand__sub">विद्या अमृतम्</span>
+            </span>
+          </a>
+          <p class="footer__tag">सत्त्वात्सञ्जायते ज्ञानं</p>
+          <p class="footer__about">Coaching Class 6–10 students for Navodaya, Sainik/Army School, Foundation and Board exams since 2009.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2 0-3 1.5-3 3.4V11H8v3h3v7h3v-7h2.5l.5-3H14V9.4c0-.3.2-.4.5-.4Z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2-2C18.2 5.7 12 5.7 12 5.7s-6.2 0-8 .5a3 3 0 0 0-2 2A31 31 0 0 0 1.7 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a3 3 0 0 0 2-2c.3-1.2.3-3.8.3-3.8s0-2.6-.3-3.8ZM10 15V9l5 3Z"/></svg></a>
+            <a href="https://wa.me/916386247358" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9a11 11 0 0 1-4.4-4c-.3-.5-1-1.5-1-2.9 0-1.3.7-2 1-2.2a1 1 0 0 1 .8-.4h.6c.2 0 .5 0 .7.6l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6a8 8 0 0 0 1.4 1.8 7 7 0 0 0 2 1.3c.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.8-.2 1.4Z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="guest-lectures.html">Guest Lectures</a></li>
+            <li><a href="institute-moments.html">Institute Moments</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="registration.html">Navodaya Coaching</a></li>
+            <li><a href="registration.html">Army/Sainik Prep</a></li>
+            <li><a href="registration.html">Foundation (6–8)</a></li>
+            <li><a href="registration.html">Board Prep (9–10)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li class="with-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Jhanda Chown, New Adarsh Nagar, Near Rana Complex, Roorkee 247667</span></li>
+            <li class="with-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:+916386247358">+91 6386247358</a></li>
+            <li class="with-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:vidyamritacademy@gmail.com">vidyamritacademy@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <p>© <span id="year">2025</span> Vidyamrit Coaching Institute. Made with <span class="heart" aria-hidden="true">♥</span> for young learners.</p>
+        <nav aria-label="Legal">
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+</body>
+</html>

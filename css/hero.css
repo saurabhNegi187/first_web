@@ -1,0 +1,140 @@
+/* ============================================================
+   Vidyamrit — hero.css
+   Homepage hero banner: royal gradient, split layout,
+   shloka signature, CTA row, and animated trust stats.
+   ============================================================ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(6.5rem, 5rem + 6vw, 9rem);
+  padding-bottom: clamp(4rem, 3rem + 5vw, 7rem);
+  color: #dbe2f6;
+  background:
+    radial-gradient(90% 120% at 88% -8%, rgba(201, 162, 39, 0.22), transparent 52%),
+    radial-gradient(80% 90% at 6% 108%, rgba(42, 79, 176, 0.5), transparent 55%),
+    linear-gradient(155deg, var(--royal-800) 0%, var(--royal-900) 68%);
+  overflow: hidden;
+}
+
+/* faint dotted knowledge-grid overlay */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1.4px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, #000 10%, transparent 78%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+}
+
+/* ---- Content -------------------------------------------- */
+.hero__content { max-width: 620px; }
+.hero .eyebrow { color: var(--gold-400); }
+.hero .eyebrow::before { background: linear-gradient(90deg, var(--gold-400), transparent); }
+
+.hero__title {
+  margin-top: 1rem;
+  font-size: var(--fs-display);
+  color: #fff;
+  line-height: 1.08;
+}
+.hero__title .hl {
+  position: relative;
+  color: var(--gold-400);
+  white-space: nowrap;
+}
+.hero__title .hl::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0.06em;
+  height: 0.12em;
+  background: rgba(224, 189, 94, 0.35);
+  border-radius: 4px;
+}
+
+.hero__shloka {
+  margin-top: 1.4rem;
+  color: var(--gold-400);
+  border-left: 2px solid rgba(224, 189, 94, 0.5);
+  padding-left: 1rem;
+}
+.hero__shloka .shloka__gloss { color: #aeb8da; }
+
+.hero__lead {
+  margin-top: 1.4rem;
+  color: #c3cbe6;
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* ---- Trust stats ---------------------------------------- */
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.2rem, 0.5rem + 2.5vw, 2.75rem);
+  margin-top: 2.6rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.hero__stats li { display: flex; flex-direction: column; }
+.hero__stats .num {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.hero__stats .num .suffix { color: var(--gold-400); }
+.hero__stats .lbl {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: #a9b3d6;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Illustration --------------------------------------- */
+.hero__art {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.hero__art img { width: min(100%, 480px); filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.35)); }
+/* slow ambient float */
+.hero__art img { animation: heroFloat 7s var(--ease) infinite; }
+@keyframes heroFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+/* floating credential card over the art */
+.hero__badge {
+  position: absolute;
+  bottom: 8%;
+  left: -4%;
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  color: var(--ink);
+}
+.hero__badge .ico {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--gold-050); color: var(--gold-600);
+}
+.hero__badge b { font-size: 0.95rem; display: block; color: var(--ink); }
+.hero__badge span { font-size: 0.76rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__art img { animation: none; }
+}

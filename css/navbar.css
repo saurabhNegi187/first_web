@@ -1,0 +1,157 @@
+/* ============================================================
+   Vidyamrit — navbar.css
+   Sticky site header, brand lockup, links + Programs dropdown,
+   Register CTA, and the hamburger button base.
+   Mobile drawer behaviour lives in responsive.css.
+   ============================================================ */
+
+html { scroll-padding-top: 92px; } /* keep anchors clear of the fixed header */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow var(--t-med) var(--ease),
+              background var(--t-med) var(--ease),
+              border-color var(--t-med) var(--ease);
+}
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-sm);
+  border-bottom-color: var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+}
+
+/* ---- Brand ---------------------------------------------- */
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+.brand__mark { width: 42px; height: 42px; }
+.brand__text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand__name {
+  font-weight: 700;
+  font-size: 1.28rem;
+  color: var(--royal-800);
+  letter-spacing: -0.01em;
+}
+.brand__sub {
+  font-family: var(--font-sanskrit);
+  font-size: 0.72rem;
+  color: var(--gold-600);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Menu wrapper --------------------------------------- */
+.nav-menu { display: flex; align-items: center; gap: 1.6rem; }
+.nav-list { display: flex; align-items: center; gap: 0.35rem; }
+
+/* ---- Links ---------------------------------------------- */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  border-radius: var(--r-sm);
+  transition: color var(--t-fast) var(--ease);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem; right: 0.75rem; bottom: 0.28rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-med) var(--ease);
+  border-radius: 2px;
+}
+.nav-link:hover,
+.nav-link.is-active { color: var(--royal-700); }
+.nav-link:hover::after,
+.nav-link.is-active::after { transform: scaleX(1); }
+.nav-link--drop svg { width: 14px; height: 14px; transition: transform var(--t-fast) var(--ease); }
+
+/* ---- Programs dropdown (desktop hover) ------------------ */
+.has-dropdown { position: relative; }
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 260px;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+}
+.dropdown::before { /* hover bridge so it doesn't close between button and panel */
+  content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px;
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.has-dropdown:hover .nav-link--drop svg { transform: rotate(180deg); }
+.dropdown a {
+  display: flex; flex-direction: column;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--r-sm);
+  transition: background var(--t-fast) var(--ease);
+}
+.dropdown a strong { font-size: 0.95rem; color: var(--ink); font-weight: 600; }
+.dropdown a small { font-size: 0.8rem; color: var(--muted); }
+.dropdown a:hover { background: var(--royal-050); }
+.dropdown a:hover strong { color: var(--royal-700); }
+
+/* ---- CTA ------------------------------------------------- */
+.nav-cta { padding: 0.65rem 1.3rem; font-size: 0.92rem; }
+
+/* ---- Hamburger (shown on mobile via responsive.css) ----- */
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: var(--r-sm);
+}
+.nav-toggle span {
+  width: 24px; height: 2px;
+  background: var(--royal-800);
+  border-radius: 2px;
+  transition: transform var(--t-med) var(--ease), opacity var(--t-fast) var(--ease);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Backdrop behind the mobile drawer */
+.nav-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(13, 31, 82, 0.42);
+  backdrop-filter: blur(2px);
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--t-med) var(--ease);
+  z-index: 990;
+}
+.nav-backdrop.is-open { opacity: 1; visibility: visible; }
+
+/* Spacer so page content clears the fixed header */
+.header-spacer { height: 72px; }

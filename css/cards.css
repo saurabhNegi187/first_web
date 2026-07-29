@@ -1,0 +1,275 @@
+/* ============================================================
+   Vidyamrit — cards.css
+   Shared card components used on the homepage and reused on
+   inner pages:
+     · program cards        · why-choose feature split
+     · results / counters   · testimonials
+     · lecture cards        · moment tiles (preview)
+     · registration CTA band
+   ============================================================ */
+
+/* ---- Reusable arrow link -------------------------------- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--royal-700);
+}
+.link-arrow svg { width: 18px; height: 18px; transition: transform var(--t-fast) var(--ease); }
+.link-arrow:hover { color: var(--gold-600); }
+.link-arrow:hover svg { transform: translateX(4px); }
+
+/* =========================================================
+   1. PROGRAM CARDS
+   ========================================================= */
+.program-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.7rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform var(--t-med) var(--ease),
+              box-shadow var(--t-med) var(--ease),
+              border-color var(--t-med) var(--ease);
+}
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+/* gold glow that blooms from the corner on hover */
+.program-card::after {
+  content: "";
+  position: absolute; top: -40%; right: -30%;
+  width: 60%; height: 80%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.18), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--t-med) var(--ease);
+}
+.program-card:hover::after { opacity: 1; }
+
+.program-card__ico {
+  width: 60px; height: 60px;
+  display: grid; place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(150deg, var(--royal-700), var(--royal-800));
+  color: var(--gold-400);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.2rem;
+}
+.program-card__ico svg { width: 30px; height: 30px; }
+.program-card h3 { margin-bottom: 0.55rem; }
+.program-card__meta {
+  font-size: 0.76rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--gold-600);
+  margin-bottom: 0.5rem;
+}
+.program-card p { font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.3rem; }
+
+/* =========================================================
+   2. WHY CHOOSE — split layout
+   ========================================================= */
+.why__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(1.8rem, 1rem + 3vw, 4rem);
+  align-items: start;
+}
+.why__intro { position: sticky; top: 110px; }
+.why__intro .shloka { margin-top: 1.2rem; }
+.why__intro .btn { margin-top: 1.8rem; }
+
+.why__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+.feature {
+  padding: 1.5rem;
+  border-radius: var(--r-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  transition: transform var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease);
+}
+.feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.feature__ico {
+  width: 46px; height: 46px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--gold-050); color: var(--gold-600);
+  margin-bottom: 0.9rem;
+}
+.feature__ico svg { width: 24px; height: 24px; }
+.feature h3 { font-size: 1.08rem; margin-bottom: 0.35rem; }
+.feature p { font-size: 0.9rem; }
+
+/* =========================================================
+   3. RESULTS BAND (royal) + counters
+   ========================================================= */
+.results .section-title { color: #fff; }
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+.stat {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.stat .num {
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  font-weight: 700; color: #fff; line-height: 1;
+}
+.stat .num .suffix { color: var(--gold-400); }
+.stat .lbl { display: block; margin-top: 0.5rem; font-size: 0.85rem; color: #b3bce0; }
+
+/* recent selections strip */
+.selection-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.select-card {
+  display: flex; align-items: center; gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--r-md);
+}
+.avatar {
+  width: 46px; height: 46px; flex-shrink: 0;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-weight: 700; color: #fff;
+  background: linear-gradient(150deg, var(--royal-600), var(--royal-800));
+}
+.avatar.is-gold { background: linear-gradient(150deg, var(--gold-400), var(--gold-600)); color: var(--royal-900); }
+.select-card b { display: block; font-size: 0.95rem; color: var(--ink); }
+.select-card span { font-size: 0.78rem; color: var(--gold-600); font-weight: 600; }
+
+/* =========================================================
+   4. TESTIMONIALS
+   ========================================================= */
+.testimonial-card {
+  position: relative;
+  padding: 2rem 1.7rem 1.7rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: transform var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease);
+}
+.testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.testimonial-card__quote {
+  font-family: Georgia, serif;
+  font-size: 3.5rem; line-height: 1;
+  color: var(--gold-400);
+  margin-bottom: 0.3rem;
+}
+.testimonial-card p { font-size: 0.98rem; color: var(--ink); margin-bottom: 1.3rem; }
+.testimonial-card__author { display: flex; align-items: center; gap: 0.8rem; }
+.testimonial-card__author b { display: block; font-size: 0.95rem; color: var(--ink); }
+.testimonial-card__author span { font-size: 0.8rem; color: var(--muted); }
+.stars { color: var(--gold-500); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 0.6rem; }
+
+/* =========================================================
+   5. LECTURE CARDS (guest lectures preview + page)
+   ========================================================= */
+.lecture-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease);
+}
+.lecture-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.lecture-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: grid; place-items: center;
+  background: linear-gradient(150deg, var(--royal-700), var(--royal-900));
+  color: #fff;
+  overflow: hidden;
+}
+.lecture-card__media .portrait {
+  width: 82px; height: 82px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 1.6rem; font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(224, 189, 94, 0.6);
+}
+.lecture-card__date {
+  position: absolute; top: 0.9rem; left: 0.9rem;
+  font-size: 0.74rem; font-weight: 600;
+  padding: 0.3rem 0.7rem; border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.95); color: var(--royal-800);
+}
+.lecture-card__body { padding: 1.4rem 1.4rem 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
+.lecture-card__topic { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.lecture-card__who b { color: var(--ink); font-weight: 600; }
+.lecture-card__who span { color: var(--muted); font-size: 0.85rem; }
+.lecture-card p { font-size: 0.9rem; margin: 0.8rem 0 1.2rem; flex-grow: 1; }
+
+/* =========================================================
+   6. MOMENT TILES (institute moments preview)
+   ========================================================= */
+.moment-tile {
+  position: relative;
+  display: block;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+}
+.moment-tile img,
+.moment-tile .ph {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow) var(--ease);
+}
+.moment-tile:hover img,
+.moment-tile:hover .ph { transform: scale(1.08); }
+.moment-tile figcaption {
+  position: absolute; inset: auto 0 0 0;
+  padding: 1.2rem 1rem 0.8rem;
+  font-size: 0.85rem; font-weight: 600; color: #fff;
+  background: linear-gradient(0deg, rgba(13, 31, 82, 0.8), transparent);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+}
+.moment-tile:hover figcaption { opacity: 1; transform: translateY(0); }
+
+/* =========================================================
+   7. REGISTRATION CTA BAND
+   ========================================================= */
+.cta-band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: clamp(20px, 3vw, 32px);
+  padding: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  color: #eaf0ff;
+  background:
+    radial-gradient(80% 120% at 90% -10%, rgba(201, 162, 39, 0.28), transparent 55%),
+    linear-gradient(150deg, var(--royal-700), var(--royal-900));
+  text-align: center;
+}
+.cta-band::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1.4px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(70% 70% at 50% 40%, #000, transparent);
+  z-index: -1;
+}
+.cta-band h2 { color: #fff; font-size: var(--fs-h2); max-width: 20ch; margin: 0.8rem auto 0; }
+.cta-band p { color: #c6cfec; max-width: 54ch; margin: 1rem auto 0; }
+.cta-band__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-top: 2rem; }

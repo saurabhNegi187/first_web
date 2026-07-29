@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Hero illustration for Vidyamrit.
+  Motif: a torana (ceremonial gateway to learning) framing a rising sun of knowledge,
+  an achievement medallion, and a stack of books. Rendered on the royal hero, so it
+  leans on gold + light tints. Purely decorative (aria-hidden in markup).
+  Replace with a real photograph at images/hero.jpg if desired.
+-->
+<svg width="560" height="560" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="h-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0d382"/>
+      <stop offset="1" stop-color="#c9a227"/>
+    </linearGradient>
+    <radialGradient id="h-glow" cx="50%" cy="42%" r="55%">
+      <stop offset="0" stop-color="#ffe9a8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="h-book1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2a4fb0"/><stop offset="1" stop-color="#1a3a8f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft glow -->
+  <circle cx="280" cy="235" r="230" fill="url(#h-glow)"/>
+
+  <!-- rising sun: concentric arcs -->
+  <g fill="none" stroke="url(#h-gold)" stroke-linecap="round" opacity="0.9">
+    <path d="M120 250 A160 160 0 0 1 440 250" stroke-width="2"/>
+    <path d="M150 250 A130 130 0 0 1 410 250" stroke-width="1.5" opacity="0.7"/>
+    <path d="M180 250 A100 100 0 0 1 380 250" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <!-- sun rays -->
+  <g stroke="url(#h-gold)" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+    <line x1="280" y1="70" x2="280" y2="95"/>
+    <line x1="210" y1="86" x2="222" y2="108"/>
+    <line x1="350" y1="86" x2="338" y2="108"/>
+    <line x1="150" y1="130" x2="170" y2="146"/>
+    <line x1="410" y1="130" x2="390" y2="146"/>
+  </g>
+
+  <!-- torana pillars -->
+  <g fill="url(#h-gold)">
+    <rect x="96" y="250" width="16" height="250" rx="4"/>
+    <rect x="448" y="250" width="16" height="250" rx="4"/>
+    <!-- capitals -->
+    <rect x="84" y="242" width="40" height="14" rx="4"/>
+    <rect x="436" y="242" width="40" height="14" rx="4"/>
+    <!-- bases -->
+    <rect x="80" y="500" width="48" height="16" rx="4"/>
+    <rect x="432" y="500" width="48" height="16" rx="4"/>
+  </g>
+  <!-- torana arch -->
+  <path d="M104 250 C104 120, 456 120, 456 250"
+        fill="none" stroke="url(#h-gold)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M104 250 C104 150, 456 150, 456 250"
+        fill="none" stroke="url(#h-gold)" stroke-width="3" opacity="0.6"/>
+  <!-- finial -->
+  <circle cx="280" cy="132" r="9" fill="url(#h-gold)"/>
+  <path d="M280 116 L285 128 L280 124 L275 128 Z" fill="url(#h-gold)"/>
+
+  <!-- achievement medallion -->
+  <circle cx="280" cy="250" r="66" fill="#0d1f52"/>
+  <circle cx="280" cy="250" r="66" fill="none" stroke="url(#h-gold)" stroke-width="4"/>
+  <circle cx="280" cy="250" r="56" fill="none" stroke="url(#h-gold)" stroke-width="1" opacity="0.5"/>
+  <!-- 8-point star -->
+  <g fill="url(#h-gold)">
+    <path d="M280 210 L289 244 L280 236 L271 244 Z"/>
+    <path d="M280 290 L289 256 L280 264 L271 256 Z"/>
+    <path d="M240 250 L274 259 L266 250 L274 241 Z"/>
+    <path d="M320 250 L286 259 L294 250 L286 241 Z"/>
+    <path d="M252 222 L278 248 L268 246 L266 236 Z" opacity="0.9"/>
+    <path d="M308 278 L282 252 L292 254 L294 264 Z" opacity="0.9"/>
+    <path d="M308 222 L282 248 L292 246 L294 236 Z" opacity="0.9"/>
+    <path d="M252 278 L278 252 L268 254 L266 264 Z" opacity="0.9"/>
+  </g>
+  <circle cx="280" cy="250" r="9" fill="#fff4d6"/>
+
+  <!-- ribbon tails -->
+  <path d="M262 306 L250 356 L268 342 L280 360 L280 306 Z" fill="#1a3a8f"/>
+  <path d="M298 306 L310 356 L292 342 L280 360 L280 306 Z" fill="#12296b"/>
+
+  <!-- stack of books -->
+  <g>
+    <rect x="182" y="452" width="196" height="26" rx="5" fill="url(#h-book1)"/>
+    <rect x="182" y="452" width="10" height="26" rx="3" fill="url(#h-gold)"/>
+    <rect x="200" y="426" width="164" height="26" rx="5" fill="#c9a227"/>
+    <rect x="200" y="426" width="10" height="26" rx="3" fill="#0d1f52"/>
+    <rect x="216" y="400" width="132" height="26" rx="5" fill="#2a4fb0"/>
+    <rect x="216" y="400" width="10" height="26" rx="3" fill="url(#h-gold)"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="url(#h-gold)" opacity="0.9">
+    <path d="M150 320 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z"/>
+    <path d="M410 340 l2.5 7 7 2.5 -7 2.5 -2.5 7 -2.5 -7 -7 -2.5 7 -2.5 z"/>
+    <path d="M395 210 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2 z" opacity="0.7"/>
+  </g>
+</svg>

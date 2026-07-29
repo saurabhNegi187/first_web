@@ -1,0 +1,115 @@
+/* ============================================================
+   Vidyamrit — forms.css
+   Admission enquiry + contact forms: field grid, inputs,
+   focus + validation states, submit, and status messages.
+   ============================================================ */
+
+.form-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  padding: clamp(1.6rem, 1rem + 2vw, 2.6rem);
+}
+.form-card__head { margin-bottom: 1.6rem; }
+.form-card__head h2 { font-size: var(--fs-h3); }
+.form-card__head p { font-size: 0.92rem; margin-top: 0.4rem; }
+
+/* layout */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field.is-full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.field label .req { color: #d64545; margin-left: 2px; }
+
+.field input:not([type="checkbox"]),
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--mist);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-sm);
+  transition: border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+  appearance: none;
+}
+.field textarea { resize: vertical; min-height: 120px; font-family: inherit; }
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23545b78' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.4rem;
+  cursor: pointer;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #9aa1bb; }
+
+.field input:not([type="checkbox"]):focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--royal-600);
+  box-shadow: 0 0 0 3px rgba(42, 79, 176, 0.14);
+}
+
+/* validation states (toggled by form.js) */
+.field.has-error input:not([type="checkbox"]),
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #e0574f;
+  background: #fdf3f2;
+}
+.field.has-error input:focus,
+.field.has-error select:focus,
+.field.has-error textarea:focus { box-shadow: 0 0 0 3px rgba(224, 87, 79, 0.16); }
+.field.is-valid input:not([type="checkbox"]),
+.field.is-valid select,
+.field.is-valid textarea { border-color: #3fae7a; }
+
+.field__error {
+  font-size: 0.78rem;
+  color: #d64545;
+  min-height: 1em;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.field.has-error .field__error { opacity: 1; transform: translateY(0); }
+
+/* consent checkbox */
+.consent {
+  grid-column: 1 / -1;
+  display: flex; align-items: flex-start; gap: 0.65rem;
+  font-size: 0.85rem; color: var(--slate);
+}
+.consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--royal-700); flex-shrink: 0; }
+.consent a { color: var(--royal-700); text-decoration: underline; text-decoration-color: var(--gold-400); }
+
+.form-actions { grid-column: 1 / -1; margin-top: 0.4rem; }
+
+/* status banner */
+.form-status {
+  grid-column: 1 / -1;
+  display: none;
+  align-items: center; gap: 0.6rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: var(--r-sm);
+  font-size: 0.9rem; font-weight: 500;
+}
+.form-status.is-success { display: flex; color: #1f7a4d; background: #eaf7f0; border: 1px solid #bce6cf; }
+.form-status.is-error { display: flex; color: #b4322a; background: #fdeeed; border: 1px solid #f3c9c5; }
+.form-status svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* tiny helper note */
+.form-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }

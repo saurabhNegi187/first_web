@@ -1,0 +1,66 @@
+/* ============================================================
+   Vidyamrit — footer.css
+   Deep-royal footer: brand + social, link columns, contact,
+   and the bottom copyright / legal bar.
+   ============================================================ */
+
+.site-footer {
+  position: relative;
+  color: #b9c2e0;
+  background:
+    radial-gradient(70% 120% at 92% 0%, rgba(201, 162, 39, 0.14), transparent 55%),
+    linear-gradient(180deg, var(--royal-900), #0a1743);
+  padding-top: clamp(3rem, 2.5rem + 2vw, 4.5rem);
+}
+.site-footer a:hover { color: var(--gold-400); }
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: clamp(1.6rem, 1rem + 2vw, 3rem);
+  padding-bottom: 2.6rem;
+}
+
+/* brand block */
+.footer__brand .brand__name { color: #fff; }
+.footer__brand .brand__sub { color: var(--gold-400); }
+.footer__brand .brand__mark { width: 46px; height: 46px; }
+.footer__tag {
+  font-family: var(--font-sanskrit);
+  color: var(--gold-400);
+  margin: 1rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+.footer__about { font-size: 0.9rem; max-width: 34ch; color: #a4aed0; }
+.footer__brand .social-row { margin-top: 1.3rem; }
+.footer__brand .social-row a { background: rgba(255,255,255,0.08); color: #dfe5f7; }
+.footer__brand .social-row a:hover { background: var(--gold-500); color: var(--royal-900); }
+
+/* columns */
+.footer__col h4 {
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+.footer__col ul { display: grid; gap: 0.7rem; }
+.footer__col a, .footer__col li { font-size: 0.92rem; color: #a9b3d6; }
+.footer__col .with-ico { display: flex; gap: 0.6rem; align-items: flex-start; }
+.footer__col .with-ico svg { width: 18px; height: 18px; color: var(--gold-400); flex-shrink: 0; margin-top: 2px; }
+
+/* bottom bar */
+.footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding-block: 1.4rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  color: #8b96bd;
+}
+.footer__bar nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.footer__bar .heart { color: var(--gold-400); }

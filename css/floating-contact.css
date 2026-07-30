@@ -1,0 +1,82 @@
+/* ============================================================
+   Vidyamrit — floating-contact.css
+   Fixed bottom-right WhatsApp + Call buttons.
+   Visible on every page, on both desktop and mobile.
+   Load this AFTER navbar.css and responsive.css.
+   ============================================================ */
+
+.floating-contact {
+  position: fixed;
+  right: clamp(1rem, 2vw, 1.6rem);
+  bottom: clamp(1rem, 2vw, 1.6rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  z-index: 1100; /* above header (1000) and nav drawer (995) */
+}
+
+.floating-contact__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--t-fast) var(--ease),
+              box-shadow var(--t-med) var(--ease);
+}
+.floating-contact__btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+.floating-contact__btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* WhatsApp — recognisable brand green, kept as-is intentionally */
+.floating-contact__btn--whatsapp {
+  background: #25d366;
+}
+.floating-contact__btn--whatsapp:hover {
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.4);
+}
+
+/* Call — matches site's royal blue */
+.floating-contact__btn--call {
+  background: var(--royal-700);
+}
+.floating-contact__btn--call:hover {
+  background: var(--royal-800);
+  box-shadow: 0 14px 34px rgba(26, 58, 143, 0.4);
+}
+
+/* Gentle pulse ring on WhatsApp to draw the eye without being annoying */
+.floating-contact__btn--whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  opacity: 0.55;
+  z-index: -1;
+  animation: floating-pulse 2.2s var(--ease) infinite;
+}
+.floating-contact__btn { position: relative; }
+
+@keyframes floating-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* Smaller footprint on very small screens */
+@media (max-width: 400px) {
+  .floating-contact__btn { width: 48px; height: 48px; }
+  .floating-contact__btn svg { width: 22px; height: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-contact__btn--whatsapp::before { animation: none; display: none; }
+}

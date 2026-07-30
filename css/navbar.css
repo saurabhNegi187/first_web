@@ -50,7 +50,34 @@ html { scroll-padding-top: 92px; } /* keep anchors clear of the fixed header */
 }
 
 /* ---- Menu wrapper --------------------------------------- */
-.nav-menu { display: flex; align-items: center; gap: 1.6rem; }
+.nav-menu{
+    position: fixed;
+    top:72px;
+    right:0;
+
+    width:280px;
+    max-width:85vw;
+    height:calc(100vh - 72px);
+
+    background:#fff;
+
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+
+    padding:20px;
+
+    transform:translateX(100%);
+    transition:transform .35s ease;
+
+    overflow-y:auto;
+
+    z-index:999;
+}
+
+.nav-menu.is-open{
+    transform:translateX(0);
+}
 .nav-list { display: flex; align-items: center; gap: 0.35rem; }
 
 /* ---- Links ---------------------------------------------- */
